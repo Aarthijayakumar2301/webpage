@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Create Your Profile</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f4f8;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .profile-container {
+      background: white;
+      padding: 2rem 3rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      max-width: 450px;
+      width: 100%;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 1.5rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: #555;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      padding: 0.6rem 0.8rem;
+      margin-bottom: 1.2rem;
+      border: 1.5px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+      transition: border-color 0.3s;
+      resize: vertical;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus {
+      border-color: #007bff;
+      outline: none;
+    }
+
+    textarea {
+      min-height: 100px;
+    }
+
+    input[type="file"] {
+      margin-bottom: 1.5rem;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      padding: 0.8rem;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .note {
+      font-size: 0.85rem;
+      color: #777;
+      margin-top: -1rem;
+      margin-bottom: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="profile-container">
+    <h2>Create Your Profile</h2>
+    <form action="#" method="post" enctype="multipart/form-data">
+      <label for="fullname">Full Name</label>
+      <input type="text" id="fullname" name="fullname" placeholder="Your full name" required />
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="example@mail.com" required />
+
+      <label for="bio">Short Bio</label>
+      <textarea id="bio" name="bio" placeholder="Tell us something about yourself..." maxlength="300"></textarea>
+
+      <label for="profile-pic">Upload Profile Picture</label>
+      <input type="file" id="profile-pic" name="profile-pic" accept="image/*" />
+      <div class="note">Max file size: 2MB. Supported formats: JPG, PNG, GIF.</div>
+
+      <button type="submit">Save Profile</button>
+    </form>
+  </div>
+
+</body>
+</html>
