@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EcomBooks — Professional Bookstore</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<header>
+  <div class="container nav-container">
+    <a href="#" class="logo">EcomBooks</a>
+    <nav>
+      <ul class="nav-links">
+        <li><button id="loginBtn" class="btn-link">Login</button></li>
+        <li><button id="registerBtn" class="btn-link">Register</button></li>
+         <li><a href="catalog.html" class="btn-link">Catalog</a></li>
+      </ul>
+    </nav>
+   <button id="cartToggle" class="cart-btn" aria-label="Toggle Cart">
+  <svg xmlns="http://www.w3.org/2000/svg" class="cart-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" >
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+      d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.2 6.4a1 1 0 001 1.2h11.6a1 1 0 001-1.2L17 13H7z" />
+  </svg>
+  <span id="cartCount" class="cart-count">0</span>
+</button>
+  </div>
+</header>
+
+<main>
+  <!-- Carousel -->
+  <section class="carousel-section">
+    <div class="carousel-container">
+      <button class="carousel-btn prev" aria-label="Previous Slide">&#10094;</button>
+      <div class="carousel-track-container">
+        <ul class="carousel-track" id="carouselTrack">
+          <!-- Slides added by JS -->
+        </ul>
+      </div>
+      <button class="carousel-btn next" aria-label="Next Slide">&#10095;</button>
+    </div>
+  </section>
+
+  <!-- Catalog -->
+  <section class="catalog container" id="catalog">
+    <!-- Books inserted by JS -->
+  </section>
+</main>
+
+<!-- Cart Sidebar -->
+<aside id="cartSidebar" class="cart-sidebar">
+  <h2>Your Cart</h2>
+  <div id="cartItems" class="cart-items"></div>
+  <div class="cart-footer">
+    <div class="cart-total">Total: $<span id="cartTotal">0.00</span></div>
+    <button id="checkoutBtn" class="btn-primary" disabled>Checkout</button>
+  </div>
+</aside>
+
+<!-- Overlay for modals -->
+<div id="modalOverlay" class="modal-overlay"></div>
+
+<!-- Login Modal -->
+<div id="loginModal" class="modal">
+  <form id="loginForm" class="modal-form" novalidate>
+    <h2>Login</h2>
+    <label for="loginEmail">Email</label>
+    <input id="loginEmail" type="email" placeholder="you@example.com" required />
+    <label for="loginPassword">Password</label>
+    <input id="loginPassword" type="password" placeholder="••••••••" required minlength="6" />
+    <button type="submit" class="btn-primary">Login</button>
+    <p class="modal-switch">Don't have an account? <button type="button" id="switchToRegister" class="btn-link">Register</button></p>
+  </form>
+</div>
+
+<!-- Register Modal -->
+<div id="registerModal" class="modal">
+  <form id="registerForm" class="modal-form" novalidate>
+    <h2>Register</h2>
+    <label for="registerName">Name</label>
+    <input id="registerName" type="text" placeholder="Your full name" required minlength="2" />
+    <label for="registerEmail">Email</label>
+    <input id="registerEmail" type="email" placeholder="you@example.com" required />
+    <label for="registerPassword">Password</label>
+    <input id="registerPassword" type="password" placeholder="••••••••" required minlength="6" />
+    <button type="submit" class="btn-primary">Register</button>
+    <p class="modal-switch">Already have an account? <button type="button" id="switchToLogin" class="btn-link">Login</button></p>
+  </form>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
